@@ -1,0 +1,119 @@
+	.file	"Peiravani_Paniz_dotProduct.cpp"
+	.text
+	.p2align 4
+	.globl	_Z10dotProductRKSt6vectorIfSaIfEES3_i
+	.type	_Z10dotProductRKSt6vectorIfSaIfEES3_i, @function
+_Z10dotProductRKSt6vectorIfSaIfEES3_i:
+.LFB865:
+	.cfi_startproc
+	endbr64
+	testl	%edx, %edx
+	jle	.L10
+	leal	-1(%rdx), %eax
+	movq	(%rdi), %rdi
+	movq	(%rsi), %rcx
+	cmpl	$6, %eax
+	jbe	.L11
+	movl	%edx, %esi
+	xorl	%eax, %eax
+	vxorps	%xmm0, %xmm0, %xmm0
+	shrl	$3, %esi
+	salq	$5, %rsi
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	vmovups	(%rdi,%rax), %ymm4
+	vmulps	(%rcx,%rax), %ymm4, %ymm1
+	addq	$32, %rax
+	vaddss	%xmm1, %xmm0, %xmm0
+	vshufps	$85, %xmm1, %xmm1, %xmm3
+	vshufps	$255, %xmm1, %xmm1, %xmm2
+	vaddss	%xmm3, %xmm0, %xmm0
+	vunpckhps	%xmm1, %xmm1, %xmm3
+	vextractf128	$0x1, %ymm1, %xmm1
+	vaddss	%xmm3, %xmm0, %xmm0
+	vaddss	%xmm2, %xmm0, %xmm0
+	vshufps	$85, %xmm1, %xmm1, %xmm2
+	vaddss	%xmm1, %xmm0, %xmm0
+	vaddss	%xmm2, %xmm0, %xmm0
+	vunpckhps	%xmm1, %xmm1, %xmm2
+	vshufps	$255, %xmm1, %xmm1, %xmm1
+	vaddss	%xmm2, %xmm0, %xmm0
+	vaddss	%xmm1, %xmm0, %xmm0
+	cmpq	%rsi, %rax
+	jne	.L4
+	movl	%edx, %esi
+	andl	$-8, %esi
+	movl	%esi, %eax
+	cmpl	%esi, %edx
+	je	.L16
+	vzeroupper
+.L3:
+	movl	%edx, %r8d
+	subl	%esi, %r8d
+	leal	-1(%r8), %r9d
+	cmpl	$2, %r9d
+	jbe	.L7
+	vmovups	(%rdi,%rsi,4), %xmm5
+	vmulps	(%rcx,%rsi,4), %xmm5, %xmm1
+	movl	%r8d, %esi
+	andl	$-4, %esi
+	addl	%esi, %eax
+	vaddss	%xmm1, %xmm0, %xmm0
+	vshufps	$85, %xmm1, %xmm1, %xmm2
+	vaddss	%xmm2, %xmm0, %xmm0
+	vunpckhps	%xmm1, %xmm1, %xmm2
+	vshufps	$255, %xmm1, %xmm1, %xmm1
+	vaddss	%xmm2, %xmm0, %xmm0
+	vaddss	%xmm1, %xmm0, %xmm0
+	cmpl	%esi, %r8d
+	je	.L1
+.L7:
+	cltq
+	.p2align 4,,10
+	.p2align 3
+.L9:
+	vmovss	(%rdi,%rax,4), %xmm1
+	vmulss	(%rcx,%rax,4), %xmm1, %xmm1
+	addq	$1, %rax
+	vaddss	%xmm1, %xmm0, %xmm0
+	cmpl	%eax, %edx
+	jg	.L9
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L10:
+	vxorps	%xmm0, %xmm0, %xmm0
+.L1:
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L16:
+	vzeroupper
+	ret
+.L11:
+	xorl	%esi, %esi
+	xorl	%eax, %eax
+	vxorps	%xmm0, %xmm0, %xmm0
+	jmp	.L3
+	.cfi_endproc
+.LFE865:
+	.size	_Z10dotProductRKSt6vectorIfSaIfEES3_i, .-_Z10dotProductRKSt6vectorIfSaIfEES3_i
+	.ident	"GCC: (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

@@ -1,0 +1,110 @@
+	.file	"Peiravani_Paniz_dotProduct.cpp"
+	.text
+	.globl	_Z10dotProductRKSt6vectorIfSaIfEES3_i
+	.type	_Z10dotProductRKSt6vectorIfSaIfEES3_i, @function
+_Z10dotProductRKSt6vectorIfSaIfEES3_i:
+.LFB865:
+	.cfi_startproc
+	endbr64
+	testl	%edx, %edx
+	jle	.L10
+	movq	(%rdi), %rdi
+	movq	(%rsi), %rcx
+	leal	-1(%rdx), %r8d
+	cmpl	$6, %r8d
+	jbe	.L11
+	movl	%edx, %esi
+	shrl	$3, %esi
+	movl	%esi, %esi
+	salq	$5, %rsi
+	movl	$0, %eax
+	vxorps	%xmm0, %xmm0, %xmm0
+.L4:
+	vmovups	(%rdi,%rax), %ymm4
+	vmulps	(%rcx,%rax), %ymm4, %ymm1
+	vaddss	%xmm1, %xmm0, %xmm0
+	vshufps	$85, %xmm1, %xmm1, %xmm3
+	vaddss	%xmm3, %xmm0, %xmm0
+	vunpckhps	%xmm1, %xmm1, %xmm3
+	vaddss	%xmm3, %xmm0, %xmm0
+	vshufps	$255, %xmm1, %xmm1, %xmm2
+	vaddss	%xmm2, %xmm0, %xmm0
+	vextractf128	$0x1, %ymm1, %xmm1
+	vaddss	%xmm1, %xmm0, %xmm0
+	vshufps	$85, %xmm1, %xmm1, %xmm2
+	vaddss	%xmm2, %xmm0, %xmm0
+	vunpckhps	%xmm1, %xmm1, %xmm2
+	vaddss	%xmm2, %xmm0, %xmm0
+	vshufps	$255, %xmm1, %xmm1, %xmm1
+	vaddss	%xmm1, %xmm0, %xmm0
+	addq	$32, %rax
+	cmpq	%rax, %rsi
+	jne	.L4
+	movl	%edx, %esi
+	andl	$-8, %esi
+	movl	%esi, %eax
+	cmpl	%esi, %edx
+	je	.L14
+.L3:
+	movl	%edx, %r9d
+	subl	%esi, %r9d
+	subl	%esi, %r8d
+	cmpl	$2, %r8d
+	jbe	.L7
+	movl	%esi, %esi
+	vmovups	(%rdi,%rsi,4), %xmm5
+	vmulps	(%rcx,%rsi,4), %xmm5, %xmm1
+	vaddss	%xmm1, %xmm0, %xmm0
+	vshufps	$85, %xmm1, %xmm1, %xmm2
+	vaddss	%xmm2, %xmm0, %xmm0
+	vunpckhps	%xmm1, %xmm1, %xmm2
+	vaddss	%xmm2, %xmm0, %xmm0
+	vshufps	$255, %xmm1, %xmm1, %xmm1
+	vaddss	%xmm1, %xmm0, %xmm0
+	movl	%r9d, %esi
+	andl	$-4, %esi
+	addl	%esi, %eax
+	cmpl	%esi, %r9d
+	je	.L1
+.L7:
+	cltq
+.L9:
+	vmovss	(%rdi,%rax,4), %xmm1
+	vmulss	(%rcx,%rax,4), %xmm1, %xmm1
+	vaddss	%xmm1, %xmm0, %xmm0
+	addq	$1, %rax
+	cmpl	%eax, %edx
+	jg	.L9
+	ret
+.L14:
+	ret
+.L11:
+	movl	$0, %esi
+	movl	$0, %eax
+	vxorps	%xmm0, %xmm0, %xmm0
+	jmp	.L3
+.L10:
+	vxorps	%xmm0, %xmm0, %xmm0
+.L1:
+	ret
+	.cfi_endproc
+.LFE865:
+	.size	_Z10dotProductRKSt6vectorIfSaIfEES3_i, .-_Z10dotProductRKSt6vectorIfSaIfEES3_i
+	.ident	"GCC: (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

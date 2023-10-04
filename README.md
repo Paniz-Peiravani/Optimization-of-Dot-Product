@@ -1,7 +1,7 @@
 # Optimization-of-Dot-Product
 Optimization of dot product computation of two vectors using vector instructions.
 
-## Windows
+# Windows
 In this file, you can find all the source files that I used for my Final Take Home Test.
 
 1. **Peiravani_Paniz_main.cpp**: This is the main function code.

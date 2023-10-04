@@ -2,17 +2,7 @@
 Optimization of dot product computation of two vectors using vector instructions.
 
 ## Windows
-
-In this file, you can find all the source files that I used for my Final Take Home Test. 
-
-1. **Peiravani_Paniz_main.cpp is my main function code.
-2. **Peiravani_Paniz_dotProduct.cpp is my C++ code that calculat dotProduct.
-3. **Peiravani_Paniz_dotProduct_Optimized.cpp is the manual optimization that I create for dotProduct.
-4. **Peiravani_Paniz_DPPS is the DPPS file that I created for more optimization.
-
-For codes from (2) to (4), we can use Peiravani_Paniz_main.cpp code as our main function.
-
-I also, put Non-Optimized, O1 optimization, and O2 optimization .asm files in the folder as well.
+In this file, you can find all the source files that I used for my Final Take Home Test.
 
 1. **Peiravani_Paniz_main.cpp**: This is the main function code.
 2. **Peiravani_Paniz_dotProduct.cpp**: C++ implementation for calculating dot product.

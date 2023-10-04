@@ -24,9 +24,9 @@ If you are using the Visual Studios projects that are posted:
 - **Peiravani_DPPS**:
   `Visual Studio > Open Peiravani_DPPS project folder > Peiravani_DPPS.sln`
 
-#### Optimization Settings:
+## Optimization Settings:
 
- #### Disable optimization**:
+ ### Disable optimization**:
  
 To disable optimization:
   

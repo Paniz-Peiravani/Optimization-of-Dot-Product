@@ -12,7 +12,7 @@ In this file, you can find all the source files that I used for my Final Take Ho
 For codes from (2) to (4), we can use `Peiravani_Paniz_main.cpp` code as our main function.
 I also, put `Non-Optimized`, `O1 optimization`, and `O2 optimization` `.asm files` in the folder as well.
 
-#### Visual Studios Projects:
+### Visual Studios Projects:
 If you are using the Visual Studios projects that are posted:
 
 - **Peiravani_dotProduct**:

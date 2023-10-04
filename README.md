@@ -26,7 +26,7 @@ If you are using the Visual Studios projects that are posted:
 
 #### Optimization Settings:
 
- # Disable optimization**:
+ #### Disable optimization**:
  
 To disable optimization:
   

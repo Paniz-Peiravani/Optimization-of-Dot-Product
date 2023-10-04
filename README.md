@@ -2,7 +2,6 @@
 Optimization of dot product computation of two vectors using vector instructions.
 
 ## Windows
-(To build the Peiravani_Manually_Opt.cpp successfully we need to make sure that we are using x84)
 
 In this file, you can find all the source files that I used for my Final Take Home Test. 
 
@@ -37,7 +36,7 @@ If you are using the Visual Studios projects that are posted:
 
 #### Optimization Settings:
 
- **Disable optimization**:
+ # Disable optimization**:
  
 To disable optimization:
   
@@ -47,7 +46,7 @@ To disable optimization:
 - Enable Parallel Code Generation [No (/Qpar-)]
 - Enable Enhanced Instruction Set [Not Set]
 
- **Enable optimization**:
+ # Enable optimization**:
  
  To disable optimization:
 
@@ -57,6 +56,8 @@ To disable optimization:
 - [Maximum Optimization (Favor Size) (/O1)]
 - Code Generation > Basic Runtime Checks [Default]
 - Enable Enhanced Instruction Set [Advanced Vector Extensions (/arch:AVX)]
+
+## To build the Peiravani_Manually_Opt.cpp successfully we need to make sure that we are using x84
 
 
 

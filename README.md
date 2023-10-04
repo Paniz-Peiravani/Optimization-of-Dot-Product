@@ -36,7 +36,7 @@ To disable optimization:
 - Enable Parallel Code Generation [No (/Qpar-)]
 - Enable Enhanced Instruction Set [Not Set]
 
- #### Enable optimization**:
+ ## Enable optimization**:
  
  To disable optimization:
 

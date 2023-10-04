@@ -47,7 +47,7 @@ To disable optimization:
 - Code Generation > Basic Runtime Checks [Default]
 - Enable Enhanced Instruction Set [Advanced Vector Extensions (/arch:AVX)]
 
-## To build the Peiravani_Manually_Opt.cpp successfully we need to make sure that we are using x84
+#### To build the Peiravani_Manually_Opt.cpp successfully we need to make sure that we are using x84
 
 # Linux - Ubuntu
 In this file, you can find all the source files that I used for my Final Take Home Test on Linux, Ubuntu. 
